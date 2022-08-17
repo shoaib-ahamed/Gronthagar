@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    "BASE_URL" : "http://localhost:3000",
+    "BASE_URL" : "https://gronthagar.vercel.app/",
     "MONGODB_URL" : "mongodb+srv://shoaibahamed:shoaibahamed@cluster0.go4eh.mongodb.net/e-book?retryWrites=true&w=majority",
     "ACCESS_TOKEN_SECRET" : "shoaibahamed@gmail.com01672019292123412",
     "REFRESH_TOKEN_SECRET" : "shoaibahamed@gmail.com0167201929201303082197",
