@@ -9,11 +9,17 @@ const Home = (props) => {
 
 
   return (
-    <div className="products">
+    <div>
       <Head>
           <title>Home</title>
       </Head>
+
+      <div style={{display: 'grid' , textAlign: 'center' , paddingTop: '10px'}}>
+      <div>
+        <h3> <strong>বই পরুন জ্ঞান অর্জন করুন</strong> </h3>
+      </div>
       
+      <div className="products">
       {
         products.length === 0
         ? <h2> no products </h2>
@@ -21,6 +27,8 @@ const Home = (props) => {
           <ProductItem key={product._id} product={product} />
         ))
       }
+      </div>
+      </div>
     </div>
   )
 }

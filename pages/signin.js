@@ -49,7 +49,7 @@ const Signin = () => {
     
     
     useEffect(() =>{
-      if(Object.keys(auth).length !== 0) return router.push('/') 
+      if(Object.keys(auth).length !== 0) return () => router.push('/') 
     }, [auth])
 
 

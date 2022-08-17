@@ -13,13 +13,13 @@ const ProductItem = ({product, handleCheck}) => {
             <>
                 <Link href={`/product/${product._id}`}>
                     <a className="btn maintone"
-                    style={{marginRight: '5px', flex: 1}}>View</a>
+                    style={{marginRight: '5px', flex: 1}}>দেখুন</a>
                 </Link>
                 <button className="btn maintone"
                 style={{marginLeft: '5px', flex: 1}}
                 disabled={product.inStock === 0 ? true : false} 
                 onClick={() => dispatch(addToCart(product, cart))} >
-                    Buy
+                    কিনুন
                 </button>
             </>
         )
@@ -34,11 +34,11 @@ const ProductItem = ({product, handleCheck}) => {
                 </h5>
 
                 <div className="row justify-content-between mx-0">
-                    <h6 className="text-danger">${product.price}</h6>
+                    <h6 className="text-info">{product.price} ৳</h6>
                     {
                         product.inStock > 0
-                        ? <h6 className="text-danger">In Stock: {product.inStock}</h6>
-                        : <h6 className="text-danger">Out Stock</h6>
+                        ? <h6 className="text-info">In Stock: {product.inStock}</h6>
+                        : <h6 className="text-info">Out Stock</h6>
                     }
                 </div>
 

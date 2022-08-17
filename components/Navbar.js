@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
     useEffect(() =>{
-        if(Object.keys(auth).length == 0) router.push('/')
+        if(Object.keys(auth).length === 0) return () => router.push('/')
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [auth])
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                 style={{
                         borderRadius: '50%', width: '30px', height: '30px',
                         transform: 'translateY(-3px)', marginRight: '3px'
-                    }}/ >
+                    }}/>
                 {auth.user ? auth.user.name : Menu}   
                     
                 
@@ -68,7 +68,9 @@ const Navbar = () => {
         <div>
           <nav className="navbar navbar-expand-lg maintone">
            <Link href='/'>
-                <a className="navbar-brand" href="#">Book Store</a>
+                <a className="navbar-brand" href="#">
+                 <strong>গণগ্রন্থাগার</strong>    
+                </a>
            </Link>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +102,7 @@ const Navbar = () => {
                 </li>
 
                 {
-                    Object.keys(auth).length === 0 ?
+                    Object.keys(auth).length == 0 ?
                     <li className="nav-item active">
                     <Link href='/signin'>
                          <a className={"nav-link" + isActive('/signin')}> <i className="fas fa-user" aria-hidden="true"></i> Sign in </a>
@@ -108,7 +110,6 @@ const Navbar = () => {
                  </li> 
                  : loggedRouter()
                 }
-
                 </ul>
             </div>
         </nav>
